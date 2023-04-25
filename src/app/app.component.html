@@ -1,0 +1,30 @@
+<div
+  class="bg-black p-10 h-screen flex items-center justify-center flex-col gap-6"
+>
+  <p class="text-white font-bold text-3xl">
+    Upload the evidence file to catch them Cybergirl!
+  </p>
+  <input (click)="playSound()" type="file" (change)="fileChanged($event)" />
+
+  <div
+    *ngIf="hackers.length > 0"
+    class="text-white flex flex-col gap-6 font-bold"
+  >
+    <p>
+      Most badass hacker:
+      <span class="text-red-500">Hacker nr.{{ hackers[0]?.id }}</span> with
+      <span class="text-green-400">{{ hackers[0]?.dataSize }}Mb</span> of data
+    </p>
+    <p>
+      His first buddy:
+      <span class="text-red-500">Hacker nr.{{ hackers[1]?.id }}</span> with
+      <span class="text-green-400">{{ hackers[1]?.dataSize }}Mb</span> of data
+    </p>
+    <p>
+      His second buddy:
+      <span class="text-red-500">Hacker nr.{{ hackers[2]?.id }}</span> with
+      <span class="text-green-400">{{ hackers[2]?.dataSize }}Mb</span> of data
+    </p>
+    <p class="pt-10 text-2xl text-yellow-300">You got them bby! :*</p>
+  </div>
+</div>
